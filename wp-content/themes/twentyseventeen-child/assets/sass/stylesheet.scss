@@ -1,0 +1,1557 @@
+@import 'reset';
+@import 'custom_fonts';
+
+$default_blue : #00aeed;
+$default_green : #00a482;
+$default_yellow: #f9bf51;
+$default_red: #ed4b49;
+$dark_blue : #014b70; 
+$hover_color: #eee;
+$prizes_page : #1b5d7d;
+$darken_yellow: #fbb515;
+$avatar_width: 150px;
+$blog_blue: #7da3b4;
+
+@mixin boxShadow() 								{ -webkit-box-shadow: 1px 1px 18px -6px rgba(0,0,0,0.75); -moz-box-shadow: 1px 1px 18px -6px rgba(0,0,0,0.75); box-shadow: 1px 1px 18px -6px rgba(0,0,0,0.75); }
+@mixin calc($key, $value) 						{ #{$key}: -webkit-calc(#{$value}); #{$key}: -moz-calc(#{$value}); #{$key}: calc(#{$value}); }
+@mixin rotateAngle($angle) 						{ transform: rotate($angle); -ms-transform: rotate($angle); -webkit-transform: rotate($angle); -o-transform: rotate($angle); -moz-transform: rotate($angle); transform-origin: center center; -ms-transform-origin: center center; -webkit-transform-origin: center center ; -o-transform-origin: center center; -moz-transform-origin: center center; }
+@mixin transitionEffect($to,$duration,$type) 	{ -webkit-transition: $to $duration $type; -moz-transition: $to $duration $type; transition: $to $duration $type; }
+html 											{ font-family: Montserrat-Regular; overflow-y: scroll; }
+* 												{ margin: 0; padding: 0; outline: 0; }
+body 											{ letter-spacing: 0.03rem; }
+h1 												{ font-size: 50px; }
+h2												{ font-size: 28px; }
+h2												{ font-size: 19px; }
+.scrollToTop									{ padding:10px;  text-align:center; background: $dark_blue; font-weight: bold; color: #fff; position:fixed; bottom:20px; top:inherit; right:20px; display:none;}
+.scrollToTop:hover 								{ cursor: pointer;}
+.btn 											{ color: #fff; margin: 10px 8px; width: auto; outline: 0 !important;  box-shadow: none; border-radius: 0; border: 0; font-size: 12px; padding: 4px 12px; font-family: Montserrat-Regular; }
+button.sign_up, a.sign_up 						{ background: $default_green; padding: 7px 10px; font-size: 12px; display: inline; width: auto; color: #fff; @extend .btn; line-height: 18px; letter-spacing: 0.03rem;
+	&:hover 									{ background: darken($default_green, 5%); color: $hover_color;  font-size: 12px; line-height: 18px; letter-spacing: 0.03rem;   }
+	&:focus 									{ color: #fff; }
+}
+.btn.active, .btn:active 					 	{ -webkit-box-shadow: none; box-shadow: none;} 
+ a.sign_up 										{ margin: 0; font-size: 15px; 
+	&:hover 									{ font-size: 15px; } 
+ }
+
+button.login 									{ background:$default_red; padding: 7px 10px; font-size: 12px; display: inline; width: auto; color: #fff; @extend .btn; line-height: 18px; letter-spacing: 0.03rem;
+	&:hover 									{ background: darken($default_red, 5%); color: $hover_color;  font-size: 12px; line-height: 18px; letter-spacing: 0.03rem; }
+	&:focus 									{ color: #fff; }
+}
+button.login_nw_color 							{ background: #00797c;
+	&:hover 									{ background: darken(#00797c, 5%); color: $hover_color; }
+}
+button.subscribe 								{ padding: 7px 10px; font-size: 12px;
+	&:hover 									{ font-size: 12px;  }
+	&:focus 									{ color: #fff; }
+}
+a 												{ @include transitionEffect(all,0.4s,ease); text-decoration: none;
+	&:hover 									{ text-decoration: none; }
+}
+.win_ipad 					 					{ margin-bottom: 30px;}
+body.logged-in 									{
+	#website_nav.navbar 						{ margin-top: 32px; }
+}
+.edit a, a.edit									{ font-size: 12px; color: #111; margin-bottom: 5px; text-align: left;  display: block; font-family: Montserrat-light; letter-spacing: 0; text-decoration: none; box-shadow: none; 
+	&:hover 									{ color: #111; box-shadow: none !important; }
+}
+.zaback 										{ display: none; }
+.block_styles 									{ font-family: Montserrat-light; font-size: 15px; line-height: 23px;  }
+.waves-button, .waves-button:hover, 
+.waves-button:visited, .waves-button-input 		{}
+.margin0 										{ margin: 0; }
+.padding0 										{ padding: 0;} 
+.paddingright0 									{ padding-right: 0; }
+.navbar-toggle 									{ background: #008cbf; border: 0;}
+.navbar-inverse .navbar-collapse, 
+.navbar-inverse .navbar-form					{ border-color: #00aeed; }
+body 											{ font-family: Montserrat-Regular; }
+#website_nav.navbar 							{ background: $default_blue; border-color: #16befb; @include boxShadow(); border-radius: 0; border: 0;  margin-bottom: 0; padding-bottom: 0 ;
+	a.navbar-brand 								{ padding: 0; 
+		img 									{ width: 90px; }
+	}
+
+	.nav 										{
+		li 										{  
+			a 									{ color: $dark_blue; font-size: 13px; padding: 0 16px; box-shadow: none; border-radius: 0; font-weight: inherit;  
+				&:hover, &.active 				{ background: $dark_blue; color: #fff;  }
+			}
+			&.active a							{ background-color: $dark_blue; color: #fff;  }
+			// &.current_page_item  a				{ background: $dark_blue; color: #fff; }
+
+		}
+	} 
+
+	button 										{ margin: 8px; }
+	
+}
+.update 										{ font-size: 12px; font-family: Montserrat-Regular;; padding-top:30px;}
+.parallax-container 							{ height: 100vh; width: 100%; }
+.section										{ width: 100%; height: 100vh; background: #eee; padding: 0; margin: 0;  display: table;
+ 	.content 									{ display: table; height: inherit; width: inherit; padding: 120px 0; 
+		.content_inner 							{ display: table-cell; vertical-align: middle;  }
+ 	}
+	.carousel-fade 								{
+	    .carousel-inner 						{
+	        .item 								{ transition-property: opacity; transition: 1.5s all ease; } 
+	        .item, .active.left, .active.right 	{ opacity: 0; } 
+	        .active, .next.left, .prev.right 	{ opacity: 1; } 
+	        .next, .prev, .active.left, .active.right { left: 0; transform: translate3d(0, 0, 0); }
+	    } 
+
+	    .carousel-control 						{  z-index: 2;  }
+	}
+ 	.carousel									{ height: inherit; width: inherit; background: url(../images/green_blue_bg.jpg) ; background-size: cover; background-position: 0;
+		.carousel-inner							{ height: inherit; width: inherit;   
+			.item  								{ height: inherit; width: inherit; vertical-align: middle; text-align: center; 
+				.vertical_align 				{ display: table; height: inherit; width: inherit; padding: 0;
+					.vertical_align_content 	{ display: table-cell; vertical-align: middle; 
+						.competition-text		{ padding-top: 30px;
+							p 					{ color: #fff; font-size: 23px;}
+						}
+					} 
+				} 
+
+				.container 						{ height: inherit; }
+				.slider_block 					{ height: inherit;   padding: 0; display: table; 
+					&.slider2_left 				{ background:  url(../images/green_blue_bg.jpg) 50%; background-size: cover; 
+						.top 					{ margin-bottom: 150px;  }
+						.bottom 				{ position: absolute; width: 100%; bottom: 20px;  
+							h3 					{ font-size: 26px;  color: #fff;}
+						}
+					}
+
+					&.slider2_right 			{ background: $dark_blue; color: #fff; text-align: left; padding-left: 50px;
+						h2 						{ font-size: 35px; line-height: 40px; margin-bottom: 50px; }
+						h3 						{ font-size: 23px; line-height: 28px; margin-bottom: 50px;}
+						button 					{ margin-left: 0;}
+					} 
+
+					&.slider3_left 				{ font-family: Montserrat-Bold; display: table;
+						ul 						{ display: table-cell; vertical-align: middle; 
+							li 					{ margin-bottom: 10px; margin-left: 50px; 
+								&:nth-child(1) 	{ color: $default_blue; }
+								&:nth-child(2) 	{ color: $default_green; }
+								&:nth-child(3) 	{ color: $default_yellow; }
+								&:nth-child(4) 	{ color: $default_red; }
+								h2 				{ font-size: 55px; text-align: left; }
+							}
+						}
+						
+					}
+ 
+					&.slider3_right 			{ padding-left: 50px; 
+						ul 						{ display: table-cell; vertical-align: middle;  padding-bottom: 75px;
+							li 					{ margin-bottom: 5px; margin-left: 50px; 
+								&:nth-child(1) 	{ margin-bottom: 40px; } 
+								h3 				{ font-size: 23px; font-family: Montserrat-Bold; color: $dark_blue; line-height: 28px; margin-bottom: 0; text-align: left; }
+							}
+						}
+
+						 
+					}
+
+					.slider_block_inner 		{ display: table-cell; vertical-align: middle; }
+				}
+				.slider_block_btn 				{ position: absolute; bottom: 60px; left: 0; }
+				&.slider3 						{
+													/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+55,6ac2e8+100 */
+													background: #ffffff; /* Old browsers */
+													background: -moz-linear-gradient(top,  #ffffff 0%, #ffffff 55%, #6ac2e8 100%); /* FF3.6-15 */
+													background: -webkit-linear-gradient(top,  #ffffff 0%,#ffffff 55%,#6ac2e8 100%); /* Chrome10-25,Safari5.1-6 */
+													background: linear-gradient(to bottom,  #ffffff 0%,#ffffff 55%,#6ac2e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+													filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#6ac2e8',GradientType=0 ); /* IE6-9 */
+
+				}
+
+				&.slider4 						{ background:  url(../images/win_ipad.png) 50%; background-size: cover;
+					h2 							{ text-align: center; color: #fff; font-size: 23px; line-height: 27px;  }
+				}
+
+				&.slider5 						{ 
+					.slider5_left				{ background: #444b65;
+						h2 						{ text-align: left; color: #fff; font-size: 27px; line-height: 35px; margin-bottom: 50px; margin-left: 33%; }
+					}
+					.slider5_right 				{ background:  url(../images/pricing.png) 50%; background-size: cover;  }
+				}
+
+				&.slider6 						{
+					.slider6_left				{ background: #014b70;
+						img 					{ width: 50%; }
+					}
+					.slider6_right 				{ background: #014b70; color: #fff;   
+						h3 						{ font-size: 24px;  line-height: 26px;  }
+						p 						{ font-size: 17px;  line-height: 23px; }
+					}
+				}
+
+				h1 								{ margin: 0 0 25px 0; color: #fff;  }
+				.logo 							{ 
+					img 						{ width: 200px; margin-bottom: 25px; }
+				}
+				.btn 							{ text-transform: uppercase; font-size: 18px;  padding: 8px 20px; font-family: Montserrat-SemiBold; }
+				// &.item1 						{ background:  url(../images/green_blue_bg.jpg) 50%; background-size: cover; }
+				 
+			}
+
+		}
+	}
+	&.home.section1 							{ background: transparent;}
+	&.home.section2 							{ /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#029e88+0,004c6e+100 */
+													background: #029e88; /* Old browsers */
+													background: -moz-linear-gradient(top,  #029e88 0%, #004c6e 100%); /* FF3.6-15 */
+													background: -webkit-linear-gradient(top,  #029e88 0%,#004c6e 100%); /* Chrome10-25,Safari5.1-6 */
+													background: linear-gradient(to bottom,  #029e88 0%,#004c6e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+													filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#029e88', endColorstr='#004c6e',GradientType=0 ); /* IE6-9 */
+													
+													color: #99ddd0;
+
+
+		
+		.content 								{ padding: 120px 0;  
+			.content_block 						{ 
+				.block_full 					{ margin-bottom: 30px; } 
+				.block_mini 					{ font-size: 14px; font-family: Montserrat-light; line-height: 21px; letter-spacing: 0.05em; }
+			 } 
+		} 
+	}
+
+	&.home.section3 							{ background: #00aeed;
+		.block 									{ color: #fff;
+			ul.icons_float 						{ margin-bottom: 20px;
+				li 								{ display: inline-block; font-size: 28px; margin-right: 8px; }
+			}
+			p 									{ margin-bottom: 20px; line-height: 25px; font-size: 18px; }
+			&.left_content 						{ text-align: center; 
+				ul 								{ 
+					li 							{ font-size: 45px; line-height: 55px; font-family: Montserrat-Bold;  
+						img 					{ width: 80%;  margin-top: 60px; }
+					}
+				}
+			}  
+		}
+	}
+
+	&.home.section4								{ 
+		.grid-item 								{ padding-right: 0; cursor: pointer; }
+		h2 										{ color: $dark_blue;}
+		.block									{ font-family: Montserrat-light; color: #fff; margin-bottom: 15px;
+			&.width40 							{}
+			&.width60 							{} 
+			.block_inner						{ padding:  20px 15px; font-size: 18px; line-height: 24px; min-height: 300px;  
+				&.bg1 							{ background: url(../images/red_bg.svg);background-size: cover; padding-right:0; background-position: 100% 95%;
+					&.short_content 			{ padding-right: 250px; }
+				}
+
+				&.bg2 							{ background: url(../images/mind.png) no-repeat 100% 70%; background-size: 360px;
+					&.short_content 			{ padding-right: 250px; }
+				}
+
+				&.bg3 							{ min-height: 615px; background: url(../images/tutor-help.jpg); background-size: cover; }
+				img 							{ display: block; margin: auto; }
+				.matgintop120 					{ margin-top: 120px; }
+
+				&.bg4 							{ min-height: 615px; background: url(../images/support.png); background-size: 220px; background-repeat: no-repeat; background-position: 50% 90%;}
+				&.bg5 							{ min-height: 615px; background: url(../images/calendar.png); background-size: 220px; background-repeat: no-repeat; background-position: 50% 90%;}
+				&.bg6							{ background: url(../images/curriculum.png) no-repeat 100% 70%; background-size: 260px;
+					&.short_content 			{ padding-right: 250px; }
+				}
+				&.bg7 							{ background: url(../images/star-prize.png) no-repeat 100% 70%; background-size: 320px; }
+			}
+			h3 									{ margin-bottom: 40px; font-size: 22px; font-family: Montserrat-Regular;  }
+			a.readmore 							{ color: #fff; display: block; margin-top: 10px; 
+				&:hover 						{ color: #fff; }
+			}
+		} 
+	}
+	
+	&.home.section5 							{ background: #59c8b5; color: #fff;
+		.content 								{ padding: 120px 0;  
+			h2 									{ color: $dark_blue;  }
+			.content_block 						{ 
+				.block_full 					{ margin-bottom: 30px; } 
+				.block_mini 					{ font-size: 12px; font-family: Montserrat-light; line-height: 15px; letter-spacing: 0.05em; }
+			 } 
+			.subscription 						{ margin-top: 50px;
+				h3 								{ color: $dark_blue; float: left; font-family: Montserrat-Bold; font-size: 25px; line-height: 28px; line-height: 32px; }
+				a.readmore 						{ color: $dark_blue; }
+				a.readmore:hover 				{ color: $dark_blue; text-decoration:underline; opacity: 1;} 
+				button 							{ float: right; text-transform: uppercase;  font-family: Montserrat-Regular;  font-size: 19px; padding: 15px 20px;  }
+			}
+		} 
+	}
+
+	&.home.section6 							{ 
+		.section_inner 							{ display: table; height: inherit; width: inherit; /* background: url(../images/time.png); background-size: cover; */ background-repeat: no-repeat; }
+												/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9f9f9+0,56c0a9+66,30add9+100 */
+												background: #f9f9f9; /* Old browsers */
+												background: -moz-linear-gradient(top,  #f9f9f9 0%, #56c0a9 66%, #30add9 100%); /* FF3.6-15 */
+												background: -webkit-linear-gradient(top,  #f9f9f9 0%,#56c0a9 66%,#30add9 100%); /* Chrome10-25,Safari5.1-6 */
+												background: linear-gradient(to bottom,  #f9f9f9 0%,#56c0a9 66%,#30add9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+												filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#30add9',GradientType=0 ); /* IE6-9 */
+		.content 								{ background: url(../images/time.png)  no-repeat 100% 104%; background-size: 70%; }										
+		.blockquote 							{ color: $dark_blue; font-size: 32px; line-height: 40px; }
+
+	}
+
+	/*********************************** Features Page ******************************************/
+	&.features.section1 						{ padding-top: 50px; 
+		.top 									{ padding: 80px 0;
+			.block 								{ 
+				&.block_left 					{ margin-bottom: 0; 
+					h1 							{ font-family: Montserrat-SemiBold; font-size: 36px; color: $dark_blue; }
+				}
+				h2 								{ color: $dark_blue; font-size: 23px; line-height: 30px; }
+			}
+		}
+
+		.mid 									{ 
+			ul 									{ text-align: center;
+				li 								{ text-align: center;  width: 30%; display: inline-block; padding: 10px; color: #fff; margin-bottom: 2%;
+					a 							{ color: #fff; text-decoration: none;  }
+					&:nth-child(1) 				{ background: $default_blue; 
+						&:hover 				{ background: darken($default_blue, 10%)}
+					}
+					&:nth-child(2) 				{ background: #ED524F; margin-left: 4.5%; margin-right: 4.5%;  
+						&:hover 				{ background: darken(#ED524F, 10%)}
+					} 
+					&:nth-child(6) 				{ background: #8fd4c2; 
+						&:hover 				{ background: darken(#8fd4c2, 10%)}
+					}
+					&:nth-child(4) 				{ background: #fcc43b; 
+						&:hover 				{ background: darken(#fcc43b, 10%)}
+					}
+					&:nth-child(5) 				{ background: #014b70; margin-left: 4.5%; margin-right: 4.5%; 
+						&:hover 				{ background: darken(#014b70, 10%)}
+					}
+					&:nth-child(3) 				{ background: $default_green; 
+						&:hover 				{ background: darken($default_green, 10%)}
+					}
+					&:nth-child(7) 				{ background: #fb913b; 
+						&:hover 				{ background: darken(#fb913b, 10%); }
+					}
+					
+				}
+			}
+		}
+
+		.bottom									{ padding: 50px 0 100px 0;
+			&.note 								{ 
+				.block_inner 					{ min-height: 450px;
+					&.block_left 				{ display: table; 
+						p 						{ display: table-cell; vertical-align: middle; padding: 20px; font-family: Montserrat-Bold; font-size: 25px; line-height: 32px; color: #fff; }
+					}			
+
+					&.block_right  				{ background: url(../images/tutor.jpg); background-size: cover; }
+				}
+			}
+		}
+
+	} 	
+
+	&.features.section2 						{ color: #fff;
+		.content_block  						{ padding-left: 0;
+			.main_content 						{ }
+			.main_content_right 				{ 
+				p 								{ @extend .block_styles; }
+				 
+				ul 								{ position: relative;
+					li 							{ margin-top: 25px; padding-left: 35px; line-height: 22px; letter-spacing: 0.02rem;
+						i 						{ margin-right: 20px; font-size: 25px; position: absolute; left: 0;}
+					}
+				}
+			}
+
+		} 
+	}
+
+	&.features.section3 						{ color: #fff;	
+		.content 								{  background: url(../images/red_bg.svg); background-size: cover; background-position: 100% 95%; }
+ 
+		.content_block  						{ padding-left: 0;
+			.blockquote 						{ margin-bottom: 25px; font-size: 23px; line-height: 32px;}
+			.block 								{ @extend .block_styles; margin-bottom: 50px;  }
+		}
+	}
+
+	&.features.section4 						{ color: #fff;	
+		.content 								{ background: url(../images/mind_inverse.svg) no-repeat 100%; background-size: 100%; padding-bottom: 260px;}
+		.content_block  						{ padding-left: 0;
+			.blockquote 						{ margin-bottom: 25px; font-size: 23px; line-height: 32px; }
+			.block 								{ @extend .block_styles; margin-bottom: 50px;  }
+		}
+	}
+
+	&.features.section5 						{ color: #fff; 
+		.content 								{ background: url(../images/feature-prize.svg) no-repeat 100% 70%; background-size: 100%;  } 
+		.content_block  						{ padding-left: 0; 
+			.blockquote 						{ margin-bottom: 25px; font-size: 23px; line-height: 32px; }
+			.block 								{ @extend .block_styles; margin-bottom: 50px;  }
+			button.more 						{ font-size: 15px; margin-left: 0; font-family: Montserrat-Regular; background: #ed4b49; color: #fff; padding: 18px 25px;
+				&:hover 						{ background: darken(#ed4b49, 5%); }
+			}
+		}
+	}
+
+	&.features.section6 						{ /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#014b70+0,00657f+100 */
+ 													background: #014b70; /* Old browsers */
+ 													background: -moz-linear-gradient(top,  #014b70 0%, #00657f 100%); /* FF3.6-15 */
+ 													background: -webkit-linear-gradient(top,  #014b70 0%,#00657f 100%); /* Chrome10-25,Safari5.1-6 */
+ 													background: linear-gradient(to bottom,  #014b70 0%,#00657f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+ 													filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#014b70', endColorstr='#00657f',GradientType=0 ); /* IE6-9 */
+  													color: #fff; 
+		.content 								{ background: url(../images/tutor_help.png) no-repeat 75% 81%; background-size: 22%;  } 
+		.content_block  						{ padding-left: 0;
+			.blockquote 						{ margin-bottom: 25px; font-size: 23px; line-height: 32px; }
+			.block 								{ @extend .block_styles; margin-bottom: 50px;  }
+			button.more 						{ font-size: 15px; margin-left: 0; font-family: Montserrat-Regular; background: #ed4b49; padding: 18px 25px;}
+		}
+	}
+
+	&.features.section7 						{ color: #fff;	
+		.content_block  						{ padding-left: 0;
+			.blockquote 						{ margin-bottom: 25px; font-size: 23px; line-height: 32px; }
+			.block 								{ @extend .block_styles; margin-bottom: 50px;  }
+			button.more 						{ font-size: 15px; margin-left: 0; font-family: Montserrat-Regular; background: #ed4b49; padding: 18px 25px;}
+		}
+	}
+
+	&.features.section8 						{ color: #fff;	
+		.content_block  						{ padding-left: 0;
+			.blockquote 						{ margin-bottom: 25px; font-size: 23px; line-height: 32px; }
+			.block 								{ @extend .block_styles; margin-bottom: 50px;  }
+			button.more 						{ font-size: 15px; margin-left: 0; font-family: Montserrat-Regular; background: #ed4b49; padding: 18px 25px;}
+		}
+	}
+
+	
+	/*********************************** Prizes Page ******************************************/
+
+	&.prizes.section1 							{ background: url(../images/prizes-page.svg) no-repeat 100% 20%; ; background-size: cover; color: #fff;
+		.content 								{ padding: 120px 0; 
+			.content_inner 						{ 
+				h1 								{ font-family: Montserrat-SemiBold; font-size: 36px; color: #fff; margin-bottom: 50px; font-weight:600; }
+			}
+		}
+		.content_block 							{ margin: 0; padding: 0; 
+			.block 								{ font-family: Montserrat-light; min-height: 230px; padding: 20px; margin-bottom: 15px; font-size: 21px; line-height: 28px; letter-spacing: 0.02em; overflow:hidden;
+				&.top 							{ /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#004970+1,004970+52,1b5d7d+52,1b5d7d+52,7db9e8+100 */
+													background: #004970; /* Old browsers */
+													background: -moz-linear-gradient(-45deg,  #004970 1%, #004970 52%, #1b5d7d 52%, #1b5d7d 52%, #7db9e8 100%); /* FF3.6-15 */
+													background: -webkit-linear-gradient(-45deg,  #004970 1%,#004970 52%,#1b5d7d 52%,#1b5d7d 52%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+													background: linear-gradient(135deg,  #004970 1%,#004970 52%,#1b5d7d 52%,#1b5d7d 52%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+													filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004970', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+
+
+					.prize-content				{ 
+						.left-first				{ padding-right:100px; font-weight:200;}
+						.left-second			{ padding: 50px 250px 100px 0; font-size: 18px;float:left;display:flex;
+							.left-second-txt	{ font-weight:200; padding: 5px 20px 0 0; line-height:25px;}
+							.left-second-btn	{ float:left;}
+						}
+						.left-win-lap			{ float:right;text-align: center; 
+							h2	 				{ font-family: Montserrat-light; font-size: 35px; margin: 10px;line-height: 35px; font-weight:600;}
+						}
+					}
+					.win-lap					{ padding-top:180px;
+						img 					{ display: block; margin: 24px auto; width: 80%; }
+					}
+				}
+				
+				button.btn 						{ margin-left: 0; float: right; font-family: Montserrat-Bold; text-transform: uppercase; font-size: 18px ; letter-spacing: 0.02em; padding: 12px 15px; 
+					&.readmore 					{ float: none; display: block; margin: auto; }
+					&.navigate 					{ float:left;}
+				}
+			} 
+		}
+	}
+	
+	/*********************************** Win iPad/find out more Page ******************************************/
+
+	&.winipad.section1 							{ color: $dark_blue; font-family: Montserrat-light; 
+		.content 								{ padding: 0; 
+			.content_inner 						{ 
+				.content-header					{ background: url(../images/ipad-bg.jpg); color: rgba(255,255,255,0.8);  padding: 60px 0; background-repeat: no-repeat; background-size: cover; background-position: 100%;text-align:center; width: 100%;height: 100vh;
+					h1 							{ font-size:65px; margin-top: 50px; font-weight:700;}
+					p 							{ padding: 15px 0 35px 0; font-size:12px; font-weight:100;}
+					.ipad-img					{ position:relative; width:500px; margin:auto;
+						.win-ipad 				{ width:100%;}
+						.ipad-btn				{ position:absolute; bottom:60px; width:100%;
+							button.btn 			{ text-transform: uppercase; font-weight: 900; letter-spacing: 0.05rem; font-size: 13px; padding:10px;}
+					    }
+					}
+				}
+				.content-sec1					{ margin-top: 60px; padding:0;
+					.text-competition 			{ font-family: Montserrat-Regular;
+						h2						{ font-size:25px; font-weight:600; padding:0; margin-bottom:20px;}
+						p 						{ font-weight:600; line-height:20px; text-align:justify;}
+					}
+				}
+				.content-sec1					{
+					.winipad-sec				{ padding: 40px;
+						.text 					{ padding-top: 20px;
+							h4					{ font-family: Montserrat-Regular; font-weight:800; padding:10px 0;}
+							p 					{ font-size:14px; line-height:18px; text-align:justify;}
+						}
+					}
+				}
+
+				.mid_content 					{
+					.mid_content_inner			{ background: url(../images/chance-bg.png); color: white;  padding: 70px 0; background-repeat: no-repeat; background-size: cover; background-position: 60%;}
+					.block 						{ text-align: center;
+						h2 						{ font-family: Montserrat-light; font-size:45px; line-height:45px; font-weight:bold; padding:0; margin-bottom:20px;}
+						p 						{ font-size: 14px; font-family: Montserrat-light;  }
+						button.btn 				{ text-transform: uppercase; font-weight: 900; letter-spacing: 0.05rem;  margin-top: 50px; font-size: 18px; padding:10px;}
+					}
+				}
+				.content-sec2					{
+					.winipad-sec				{ padding: 40px; border-bottom: 2px #d5dbde solid; overflow-x:hidden;
+						.text 					{ padding-top: 20px;
+							h4					{ font-family: Montserrat-Regular; font-weight:800; padding:10px 0;}
+							p 					{ font-size:14px; line-height:18px; text-align:justify;}
+						}
+					}
+					.wifi						{ border-bottom: none;} 
+				}
+			}  
+		}  
+
+	}
+
+	/*********************************** Subscription Page ******************************************/
+	
+	&.subscription.section1 					{ 
+		.content 								{  
+			.content_inner 						{ 
+				h1 								{ font-family: Montserrat-SemiBold; font-size: 36px; color: $dark_blue; margin-bottom: 50px; font-weight:600; }
+			}
+		} 
+
+		.content_block 							{ padding-left: 0; display: flex;
+			.blockquote  						{ padding: 50px; color: #fff; }
+			button.btn 							{ margin-left: 0; font-family: Montserrat-Bold; text-transform: uppercase; font-size: 18px ; letter-spacing: 0.02em; padding: 10px 12px; display: block; margin: auto; margin-top: 25px;} 
+			
+			.block 								{ margin-top: 40px; padding: 50px; height: 100%; color: #fff;
+				&.pricing 						{ 
+					h3 							{ text-align: center; color: $dark_blue;
+						i 						{  padding: 10px; background: #c2e7f7; display: inline-block;}
+					}
+					.pricing_table 				{ margin-top: 15px; border: 0;
+						&.table>thead>tr>th 	{ vertical-align: bottom; border-bottom: 0; padding: 4px; }
+						&.table>tbody>tr>td 	{ border-top: 0; padding: 4px; } 
+						tr em 					{ padding: 2px 10px; display: block; font-size: 18px; }
+						tr.header_bg em 		{ background: #51c4f1; color: $dark_blue; }
+						tr.lighter_bg em 		{ background: #c2e7f7; color: #27aae2; } 
+						tr.light_bg em 		{ background: #81d4f4; color: #fff; } 
+					}	 
+					.terms 						{ font-family: Montserrat-light;  background: #c2e7f7; color: $dark_blue; padding: 15px; line-height: 20px; 
+						li 						{ list-style-type:disc; margin-left: 15px;}
+					}
+					
+				}
+
+				&.bottom_block 					{ background: $dark_blue; padding: 20px;  font-family: Montserrat-light;
+					&.right 					{ } 
+					h3 							{ font-family: Montserrat-Bold; font-size: 18px;  }
+					ul 							{ margin-top: 25px;
+						li 						{ line-height: 40px; list-style-type:disc; margin-left: 15px;
+							img 				{ width: 100px; vertical-align: middle; margin-left: 15px; }
+						}
+					}
+					p 							{ line-height: 20px; }
+					a 							{ color: #fff;
+						&:hover 				{ color: #fff; }
+					}
+					.payment_list 				{ margin-top: 9px;
+						li 						{ line-height: 37px;}
+					}
+				}
+
+				&.right 						{ 
+					ul 							{ margin-top: 20px;
+						li 						{ line-height: 22px; font-size: 15px; margin-bottom: 12px; list-style-type:disc;
+							i 					{ display: block; font-family: Montserrat-Regular; }
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+	/*********************************** Benifits Page ******************************************/
+	&.benifits.section1 						{ background: #fff;
+		.content 								{  
+			.content_inner 						{ 
+				h1 								{ font-family: Montserrat-SemiBold; font-size: 36px; color: $dark_blue; margin-bottom: 50px; font-weight:600; }
+			}
+		} 
+		.grid-item 								{ padding-right: 0; }
+		h2 										{ color: $dark_blue;}
+		.block									{ font-family: Montserrat-light; color: #fff; margin-bottom: 15px;
+			&.width40 							{}
+			&.width60 							{} 
+			.red-unit							{ background: #ed4e4b; background: url(../images/red_bg.svg);background-size: cover; padding-right:0; background-position: 100% 95%;}
+			.block_inner						{ min-height: 300px;  padding:  20px 25px; font-size: 21px; line-height: 28px; 
+				.unit-test						{ padding-right:150px;}
+				&.access 						{ background: url(../images/wifi.png) 50% 90% no-repeat; min-height: 615px; }
+				&.present 						{ background: url(../images/present.png) 102% 50% no-repeat; 
+					&.short_content 			{ padding-right: 250px; }
+				}
+				&.students 						{ background: url(../images/students.png) 50% 90% no-repeat; min-height: 615px;  }
+				&.subject 						{ background: url(../images/support.png) 90% 50% no-repeat; 
+					&.short_content 			{ padding-right: 250px; }
+				}
+			}
+			h3 									{ margin-bottom: 40px; font-size: 14px; font-family: Montserrat-Regular;  }
+		} 
+		.content_block 							{ padding-left: 0; display: flex; }
+
+	}
+
+	&.benifits.section2 						{ color: #fff;
+		.section_inner 							{ display: table; height: inherit; width: inherit;   background: url(../images/benifits.png); background-size: cover;  background-repeat: no-repeat; }
+		.block 									{  
+			h3 									{ font-size: 30px;  line-height: 35px;}
+		}
+	} 
+
+	&.benifits.section3 						{ color: #fff; background: #fff; 
+
+		.grid-item 								{ padding-right: 0; }
+		h2 										{ color: $dark_blue;}
+		.block									{ min-height: 300px; font-family: Montserrat-light; color: #fff; margin-bottom: 15px; position: relative; display: table; height: 100%; width: 100%;
+			
+			&.width40 							{ position: relative; }
+			&.width60 							{} 
+			.block_inner						{ padding:  20px 25px; font-size: 21px; line-height: 28px; position: relative; height: 100%; width: 100%;  display: table; 
+				&.full_height 					{ height: 615px; }
+				&.padding_for_bg 				{ }
+				&.bg1 							{ background: url(../images/benefits1.png); background-repeat: no-repeat;  background-position: 50% 90%;  background-size: 60%;  }
+				&.bg2 							{ background: url(../images/faces.png); background-repeat: no-repeat; background-position: 94% 50%; background-size: 150px; padding-right: 190px;  
+					p 							{ display: table-cell; vertical-align: middle; line-height:30px;}
+				}
+			}
+			.blue-inner							{ background: url(../images/curriculum.png) no-repeat 50% 100%;background-size: 160px;}
+			h3 									{ margin-bottom: 40px; font-size: 14px; font-family: Montserrat-Regular;  }
+		}  
+	}
+
+	/*********************************** Competition Page ******************************************/
+
+	&.competition.section1 						{ /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1c677e+0,2f818c+50,50b5a3+100 */
+													background: #1c677e; /* Old browsers */
+													background: -moz-linear-gradient(top,  #1c677e 0%, #2f818c 50%, #50b5a3 100%); /* FF3.6-15 */
+													background: -webkit-linear-gradient(top,  #1c677e 0%,#2f818c 50%,#50b5a3 100%); /* Chrome10-25,Safari5.1-6 */
+													background: linear-gradient(to bottom,  #1c677e 0%,#2f818c 50%,#50b5a3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+													filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c677e', endColorstr='#50b5a3',GradientType=0 ); /* IE6-9 */
+
+													color:#B8E0D7; 
+		.com-content							{ padding: 120px 0; display: table;
+			.com-content-inner					{ display: table-cell; vertical-align:middle;
+				.title-com						{
+				h2 								{ font-family: Montserrat-light; color: #fff; margin-bottom: 50px; font-weight:600; font-size:35px;}
+				}
+				.parent_content					{ font-family: Montserrat-light; font-weight:600; overflow:hidden;
+					.left_content				{ background-color: #2B5678;padding: 20px 30px 100px 30px; flex-grow: 1; height: 450px; color:rgba(255,255,255, 0.7);
+						p 						{ line-height: 24px;}
+						.btn-signup				{ text-align:center; margin-top:15px;
+							button 				{ font-family: Montserrat-SemiBold; background: #00a482; color: #fff; padding: 10px 20px; line-height: 18px; width:auto; text-transform: uppercase;font-size: 18px;}
+							button:hover 		{ background: darken(#00a482, 10%)}
+						}
+					}
+					.right_content				{ background-color:#014B70; padding: 20px 20px 50px 30px;flex-grow: 1; height: 450px;
+						h3						{ padding-left: 30px; padding-bottom: 20px; font-size:20px;}
+						.second 				{
+							.img-sec			{ margin: 0;
+							img 				{  margin-top: 60px; margin-left: 30px; width: 80%; }
+							}
+							.mobile_para		{ margin-top: 90px;
+								p 				{ line-height: 21px; }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+
+	/*********************************** About Page ******************************************/
+
+	&.About.section1 							{ 
+		.content 								{  
+			.content_inner 						{ 
+				h1 								{ font-size: 36px; font-family: Montserrat-SemiBold; color: $dark_blue; margin-bottom: 20px;}
+			} 
+		} 
+
+		.content_block 							{ padding-left: 0;  
+			.left 								{ padding-left: 0;}
+			.right 								{ padding-right: 0;}
+			.content_block_inner 				{ padding-left: 0px}
+			.block 								{ margin-top: 20px; padding: 20px; height: 100%; color: #fff; min-height: 300px; font-family: Montserrat-light; line-height: 25px; font-size: 18px;
+				&.main_content 					{ font-size: 32px;  line-height: 40px; font-family: Montserrat-Regular; }
+				&.full_height 					{ height: 620px;}
+				&.bg_img1 						{ background: url(../images/about_img1.jpg); background-repeat: no-repeat; background-size: cover;     background-position: -50% 100%; }
+				&.bg_img2 						{ background: url(../images/mobile_img1.jpg); background-repeat: no-repeat; background-size: cover; }
+				.inner-text						{ font-size: 22px; line-height: 28px; padding: 22px!important;;}
+				.bottom-unit					{ padding: 0!important;}
+			}
+		}	
+	}
+	
+	/*********************************** Careers Page ******************************************/
+
+	&.Careers.section1 							{ @include calc(height, "100vh - 168px");
+		.content 								{  
+			.content_inner 						{ 
+				h1 								{ font-size: 36px; font-family: Montserrat-SemiBold; color: $dark_blue; margin-bottom: 20px;}
+			} 
+		} 
+
+		.content_block 							{ padding-left: 0; 
+			.main_content						{ padding: 15px 25px; margin-bottom: 60px;	 font-family: Montserrat-light; color: #fff; font-size: 15px; line-height: 19px;}
+			.block								{ padding: 15px 25px; }
+		
+			ul.job_list 						{ color: $dark_blue; font-family: Montserrat-light; 
+				li.job 							{ margin-bottom: 30px; border-bottom: 1px #d8d8d8 solid; padding-bottom: 30px;
+					.Job_wrapper				{ background: #e5e5e5; padding: 20px;
+						.head					{ 
+							.left				{ float: left; 
+								h3 				{ font-family: Montserrat-SemiBold;  }
+							}
+							.right 				{ float: right; line-height: 10px;
+								.info 			{ font-size: 10px;  }
+							}
+						} 
+						.body					{ font-size: 11px; line-height: 14px; padding: 10px 0;}
+						.footer					{ background: transparent; padding: 0; 
+							a.read_more			{ font-size: 10px; color: $dark_blue;  
+								&:hover 		{ color: lighten($dark_blue, 10%); }
+							}
+							.btn 				{ float: right;  margin: 0; text-transform: uppercase; letter-spacing: 0.02rem; }
+						}
+					} 
+				}
+			}
+		}
+	}
+
+	/*********************************** Contact Page ******************************************/
+
+	&.contact.section1 							{ 
+		.content 								{  
+			.content_inner 						{ 
+				h1 								{ font-size: 36px; font-family: Montserrat-SemiBold; color: $dark_blue; margin-bottom: 20px;}
+			} 
+		} 
+   
+
+		.content_block 							{ padding-left: 0; color: #fff; font-family: Montserrat-Regular; 
+			.block								{ padding: 25px 25px; margin-bottom: 10px; min-height: 160px; font-size: 15px; line-height: 19px;
+			 	&.full_height 					{ min-height: 394px; }
+			 	&.sec_block 					{ 
+			 		.customer_care 				{ 
+			 			.call 					{ padding-top:10px;}
+			 			}
+			 	}
+			 	a 								{ color: #fff; text-decoration:none;
+					&:hover 					{ color: #fff; text-decoration:underline; }
+					&:visited 					{ color: #fff; text-decoration:none;}
+					&:active 					{ color: #fff; text-decoration:none;}
+			 	}
+			 	h3 								{ margin-bottom: 15px;  font-family: Montserrat-SemiBold;  }
+				ul 								{ 
+					li 							{ margin-bottom: 15px; line-height: 21px; font-size: 16px; letter-spacing: 0.04rem; }
+						span 					{ display: block; font-family: Montserrat-SemiBold; }
+				}
+				 
+			}
+		}
+	}
+	
+
+	/*********************************** Partnership Page ******************************************/
+
+	&.Partnerships.section1 					{ 
+		.content 								{  
+			.content_inner 						{ 
+				h1 								{ font-size: 36px; font-family: Montserrat-SemiBold; color: $dark_blue; margin-bottom: 20px;} 
+			} 
+		}  
+		.content_block 							{ padding-left: 0; color: #fff; font-family: Montserrat-light; 
+			.block 								{ padding: 15px 25px; line-height: 19px;
+				a 								{ color: #fff; text-decoration: underline; }
+				strong							{ font-weight: 800!important;} 
+				
+			}
+		} 
+	}
+	
+    /*********************************** FAQ Page ******************************************/
+
+ 
+
+	&.FAQ.section1 								{ 
+		.content 								{  
+			.content_inner 						{ 
+				h1 								{ font-size: 36px; font-family: Montserrat-SemiBold; color: $dark_blue; margin-bottom: 20px;} 
+				.panel-group 					{ 
+					.panel 						{ margin-bottom: 20px; color: $dark_blue; font-size: 11px; font-family: Montserrat-light; line-height: 17px; 
+						.panel-heading 			{ background: #e5e5e5; position: relative; cursor: pointer;
+							h4 					{ color: $dark_blue; font-size: 13px; font-family: Montserrat-Regular; padding-left: 20px; 
+								i 				{ vertical-align: middle; position: absolute; top: 12px; left: 15px; @include transitionEffect(all,0.4s,ease);  @include rotateAngle(90deg); }
+							}
+							&.collapsed 		{  
+								i 				{ @include rotateAngle(0deg); }
+							}
+							
+						}
+					}
+				} 
+			} 
+		}  
+		.content_block 							{ padding-left: 0; color: #fff; font-family: Montserrat-light; 
+			.block 								{ padding: 15px 25px; line-height: 19px;
+				a 								{ color: #fff; text-decoration: underline; }
+				strong							{ font-weight: 800!important;} 
+				
+			}
+		} 
+	}
+	
+
+	/*********************************** Downloads Page ******************************************/
+
+	&.Downloads.section1 						{ color: #fff; @extend .orange_bg;
+		.content 								{  
+			.content_inner 						{ 
+				h1 								{ font-size: 36px; font-family: Montserrat-SemiBold; color: #fff; margin-bottom: 20px;}  
+			} 
+		}  
+		.content_block 							{ padding-left: 0; 
+			&.divider 							{ border-bottom: 1px #fff solid; }
+			.block 								{ padding: 50px 0; font-size:15px; line-height: 21px; font-family: Montserrat-light;  
+				h3 								{ font-size: 23px;  margin-bottom: 25px; font-family: Montserrat-Regular; }
+				&.img_block 					{   
+					img 						{ width: 250px; }
+				}
+
+				ul.action_btns 					{ margin-top: 25px;	
+					li 							{ display: inline-block; 
+						button.btn 				{ margin: 0; margin-right: 10px; font-size: 15px; padding: 8px 15px; letter-spacing: 0.02rem; font-family: Montserrat-Regular;  }
+
+					}
+				}
+			}
+		} 
+	}
+
+		/*********************************** Testimonials Page ******************************************/
+
+	&.Testimonials.section1 					{ color: $dark_blue;
+		.content 								{ padding: 120px 0 0 0; 
+			.content_inner 						{ 
+				h1 								{ font-size: 36px; font-family: Montserrat-SemiBold; color: $dark_blue; margin-bottom: 20px;}  
+				.mid_content 					{ background: #f9ad1b;
+					.mid_content_inner			{ background: url(../images/win_ipad_air.png); color: white;  padding: 60px 0; background-repeat: no-repeat; background-size: 450px; background-position: 75% 60px;}
+					.block 						{ text-align: center; font-family: Montserrat-Regular; 
+						h2 						{ font-family: Montserrat-light; font-size:45px; line-height:45px; font-weight:bold; padding:0; margin-bottom:20px;}
+						p 						{ font-size: 14px; font-family: Montserrat-light;  }
+						button.btn 				{ text-transform: uppercase; font-weight: 900; letter-spacing: 0.05rem;  margin-top: 50px; font-size: 18px; padding:10px;}
+					}
+				}
+			}  
+		}  
+		.main_desc 								{ font-size: 12px; line-height: 16px; }
+		.content_block 							{ padding-left: 0; 
+			.block	 							{ 
+				ul.testimonial_list 			{ padding: 50px 0;
+					&.top 						{ padding-bottom: 10px; 
+						li:last-child 			{ border: 0 !important; }
+					}
+					&.bottom 					{ padding-top: 10px; border: 0; }
+					li.testimonial 				{ border-bottom: 1px #d5dbde solid; padding: 30px 0;
+						&.left 					{
+							.avatar_img 		{  float: left; }
+							.text  				{ float: left;}
+						}
+						&.right 					{
+							.avatar_img 		{  float: right; }
+							.text  				{ float: right; }
+						}
+						.avatar_img 			{ width: $avatar_width;  }
+						.text 					{ @include calc(width, "100% - "+$avatar_width); padding: 20px 0; font-size: 13px; font-family: Montserrat-light; line-height: 18px;
+							strong.user 		{ font-family: Montserrat-Regular; font-size: 12px; margin-top: 10px; display: block;}
+						}	
+					}
+				}
+
+			}
+		}
+
+	}
+
+	/*********************************** Terms and Conditions Page ******************************************/
+
+	&.Privacy, &.Disclaimer, &.Terms.section1, &.Copyright 	 { color: $dark_blue; font-size: 11px; line-height: 17px; font-family: Montserrat-light; 
+		.terms 									{  padding-bottom: 60px;}
+		.content 								{ 
+			.content_inner 						{ 
+				h1 								{ font-size: 26px; font-family: Montserrat-Regular; color: $dark_blue; margin-bottom: 20px;}  
+				h2 								{ font-size: 23px; font-family: Montserrat-Regular; color: $dark_blue; margin-bottom: 20px;}
+				h3 								{ font-size: 15px; font-family: Montserrat-Regular; margin-bottom: 10px; }
+				.enjoy 							{ text-align:center; margin:40px 0 0 0;}
+				
+				.panel-group 					{   
+					.panel 						{ margin-bottom: 20px; 
+						.panel-heading 			{ background: #e5e5e5; position: relative; cursor: pointer;
+							h4 					{ color: $dark_blue; font-size: 13px; font-family: Montserrat-Regular; padding-left: 20px; 
+								i 				{ vertical-align: middle; position: absolute; top: 12px; left: 15px; @include transitionEffect(all,0.4s,ease);  @include rotateAngle(90deg); }
+							}
+							&.collapsed 		{  
+								i 				{ @include rotateAngle(0deg); }
+							}
+							
+						}
+					}
+				} 
+
+				ul 								{ padding-left: 40px;
+					li 							{ list-style-type: square;  margin-bottom: 7px; }
+				}
+				p 								{
+					span 						{ font-weight:800;}
+					a 							{ color: $dark_blue; }
+					a:hover 					{ text-decoration:underline;}
+				}
+			}
+		}
+	}
+
+	/*********************************** Site Map Page ******************************************/
+
+	&.Site.section1 	 						{ color: $dark_blue; font-size: 13px; line-height: 17px; font-family: Montserrat-light; 
+		.content 								{ 
+			.content_inner						{ 
+				.container 						{
+					h1 							{ font-size: 26px; font-family: Montserrat-Regular; color: $dark_blue; margin-bottom: 20px; text-align: center;}
+					.map-links 					{ padding-left:80px;
+						h3 						{ font-family: Montserrat-SemiBold; font-size: 20px; padding:30px 0 15px 0;}
+						.page-links 			{ padding-left: 17px; font-weight: inherit; padding-top: 0; padding-bottom: 5px;  
+							li 					{ padding: 3px 0; list-style-type: square;
+								a 				{ color: $dark_blue; cursor:pointer; font-family: Montserrat-light; box-shadow: none; font-size: 13px; }
+								a:hover 		{ text-decoration:underline;}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+	/*********************************** Blogs Page ******************************************/
+	
+	&.blog.section1 	 						{ color: $dark_blue; font-size: 12px; line-height: 18px; font-family: Montserrat-light;  @include calc(height, "100vh - 168px");
+		.content 								{ padding: 80px 0;  
+			h1,h2 								{ font-size: 17px; color: $dark_blue; letter-spacing: 0.03rem; font-family: Montserrat-SemiBold; margin-bottom:15px;}
+			h1, h1 a							{ font-size: 32px; margin-bottom: 30px; color: $dark_blue;}
+			p 									{ font-size: 20px;}
+			.left_container   					{ padding-right: 50px; } 
+			.left_container, .right_container	{ 
+				#secondary 						{ width: 100%; 
+					.search-form				{
+						label 					{ display: none; }
+						.search-submit 			{ top: inherit;  background: transparent;   
+							.icon 				{ height: 17px; }
+						}
+					} 
+					.widget  					{ font-size: 12px; line-height: 15px; 
+						h2 						{ line-height: 18px; }
+					}
+					.tnp-field  				{  
+						label 					{ margin-top: 10px; margin-bottom: 5px; font-size: 13px;  }
+						input[type=email] 		{ border: 1px solid #bbb; background: #fff; padding: 6px; }
+						input.tnp-submit  		{ background: $dark_blue; font-family: Montserrat-light; }
+					}
+				}
+				.post, .blog_post 				{ padding: 20px 0; margin-bottom: 20px;  border-bottom: 1px #dddddd solid;  
+				}
+				.entry-date 					{ font-size: 10px; letter-spacing: 1px; font-family: Montserrat-light; }
+				.edit-link 						{ float: right; }
+				.entry-header 					{
+					h1 							{ font-size: 26px; font-family: Montserrat-Regular; color: $dark_blue; margin-bottom: 10px; margin-top: 10px; }  
+					h2 							{ margin-bottom: 0; }
+					a 							{ color: $dark_blue; text-decoration: none; box-shadow: none; font-family: Montserrat-Regular;
+						&:hover 				{ opacity: 0.8; }
+					}
+					small 						{ font-size: 11px; }
+				}
+				.navigation .nav-links 			{ display: none ;}
+				.entry-content 					{ margin-bottom: 15px;
+					a 	 						{ box-shadow: none; }
+					p 							{ font-size: 13px; }
+				}
+				.comments-area 					{ margin: 0; padding-top: 0 !important;
+					p 							{ font-size: 12px; margin-bottom: 8px; }
+					input[type=submit] 			{ background: $dark_blue; padding: 10px 20px; }
+				}
+				.entry-footer 					{ padding: 0;
+					.edit-link 					{
+						a.post-edit-link 		{ padding: 0; background: transparent;  color: #111111; 
+							&:hover 			{ opacity: 0.8; }
+						}
+					}
+				}
+				.post_block 					{ padding: 15px 0; border-bottom: 1px #d4d4d4 solid;
+					&.archives 					{ 
+						.body 					{ 
+							ul 					{ border: 1px #d4d4d4 solid; border-bottom: 0;
+								li 				{ padding: 5px; border-bottom: 1px #d4d4d4 solid; 
+									a 			{ color: $dark_blue; }
+								}
+							}
+						}
+					}
+					&.follow 					{ 
+						.body 					{ 
+							ul 					{ margin-top: 10px;
+								li 				{ padding: 0 3px 10px 0;  
+									a 			{ color: $dark_blue; font-size: 12px; text-decoration: none; 
+										&:hover { color: lighten($dark_blue, 15%);}
+										i.fa 	{ width: 25px; font-size: 20px; vertical-align: middle; }
+									}
+								}
+							}
+						}
+					}
+					.header 					{
+						h2 						{ color: $default_blue; font-family: Montserrat-Regular; font-size:18px; line-height: 22px; }
+						span.post_date 			{ font-size: 11px; color: $blog_blue; margin-top: 4px; display: block; }
+						a.tag 					{ background: $blog_blue; padding: 3px 8px; color: #fff;  margin-bottom: 10px; display: inline-block; text-decoration: none;
+							&:hover 			{ background: darken($blog_blue, 15%); }
+						}
+					}
+					.body 						{ padding: 10px 0; }
+					.footer 					{ color: $blog_blue; background: transparent; padding: 0; font-size: 11px; 
+						span.author 			{ float: left; }
+						ul.share 				{ float: right;  
+							li 					{ display: inline-block; margin-right: 4px; 
+								a 				{ color: $blog_blue; font-size: 12px;	
+									&:hover 	{ color: darken($blog_blue, 15%); }
+								}
+							}
+						}
+					} 
+				}
+			}
+
+			.right_container					{  border-bottom: 0; 
+				.body 							{ 
+					form 						{ margin-top: 10px; 
+						.form-group 			{ margin-bottom: 10px; }
+						label 					{ margin-bottom: 5px; }
+						input.form-control  	{ padding: 3px 10px; height: auto; font-size: 12px; }
+						button 					{ margin: 0; background: $blog_blue; text-transform: uppercase;
+							&:hover 			{ color: #fff;  background: darken($blog_blue, 15%);}  
+
+						}
+					}
+				} 
+			}
+
+		}
+	}
+	
+
+
+
+
+ 
+
+
+}
+
+.footer 										{ background: #00aeed; padding: 25px 0; font-family: Montserrat-light; letter-spacing: 0.01rem!important;
+	ul 											{ 
+		li 										{ 
+			a 									{ color: $dark_blue; 
+				&:hover 						{ color: lighten(#014b70, 10%);}
+			}
+		}
+	}
+	.top										{  
+		ul.footer_nav							{ float: left; letter-spacing: 0.01rem!important;
+			li 									{ display: inline-block; width:23%; font-size: 11px; }
+		}
+
+		ul.social_links 						{
+			li 									{ display: inline-block; 
+				span 							{ font-size: 11px; color: $dark_blue;  }
+				a 								{ 
+					i 							{ font-size: 15px; margin-left: 2px; }
+				}
+			}
+		}
+	}
+
+	.mid 										{ 
+		.col-md-offset-3    					{ margin-left: 23%;
+			ul.additional_links 				{ margin-top: 30px;
+				li 								{ display: inline-block; 
+					a 							{ font-size: 11px; text-decoration: underline; padding: 7px; 
+						i 						{ font-size: 23px; margin-left: 5px; }
+					}
+				}
+			}
+		}
+	
+	}
+
+	.copyright 									{ text-align: center; margin-top: 30px;  font-family: Montserrat-Regular;  color: #014b70; font-size: 10px;
+		span									{ /*font-size: 13px;*/    }
+	}
+}
+
+.hvr-grow:active, .hvr-grow:focus, 
+.hvr-grow:hover 								{ -webkit-transform: scale(1.02); transform: scale(1.02); }
+#loader  										{ position: relative; z-index: 10001;  display: table-cell; vertical-align: middle; }
+#loader-wrapper 								{ position: fixed;  top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; display: table;
+	.loader-section 							{ position: fixed; top: 0; width: 51%; height: 100%; background: $dark_blue; z-index: 1000; 
+		&.section-left 							{ left: 0; }
+		&.section-right 						{ right: 0; }
+	}
+}
+ 
+.loaded 										{  
+	#loader-wrapper 							{ opacity: 0;  -webkit-transition: all 0.5s ease-out; transition: all 0.5s ease-out; visibility: hidden;} 
+	// #loader 									{ opacity: 0;  -webkit-transition: all 0.3s ease-out; transition: all 0.3s ease-out; }
+	// #loader-wrapper 							{ visibility: hidden; -webkit-transform: translateY(-100%); -ms-transform: translateY(-100%); transform: translateY(-100%);  -webkit-transition: all 0.3s 1s ease-out; transition: all 0.3s 1s ease-out;
+	// 	.loader-section 						{ 
+	// 		&.section-left 						{  opacity: 0; -webkit-transform: translateX(-100%); -ms-transform: translateX(-100%); transform: translateX(-100%);    -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);  }
+	// 		&.section-right 					{  opacity: 0; -webkit-transform: translateX(100%);  -ms-transform: translateX(100%); transform: translateX(100%);  -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000); }
+	// 	}
+	// }
+}
+
+.sign_up_email									{ display: block;  margin-top: 50px;
+	h3 											{ color: #fff; text-align: center; margin-bottom: 25px;  font-size: 24px; }
+	form 										{ display: flex;
+		input 									{ border-radius: 0; }
+		button 									{ margin: 0; padding: 8px 20px; width: 140px; margin-left: 10px; 
+			&:focus, &:active					{ background: darken(#00a482, 5%) !important;  }
+		} 
+	}
+}
+
+
+.full_blue_bg 						{ background: $default_blue; }
+.full_red 							{ background: $default_red; }
+.full_green 						{ background: $default_green; }
+.full_yellow 						{ background: #fbb812; }
+.bg_blue 							{ 
+													/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0bafec+0,68caf1+100 */
+									background: #0bafec; /* Old browsers */
+									background: -moz-linear-gradient(top,  #0bafec 0%, #68caf1 100%); /* FF3.6-15 */
+									background: -webkit-linear-gradient(top,  #0bafec 0%,#68caf1 100%); /* Chrome10-25,Safari5.1-6 */
+									background: linear-gradient(to bottom,  #0bafec 0%,#68caf1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+									filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0bafec', endColorstr='#68caf1',GradientType=0 ); /* IE6-9 */
+}
+
+.red_bg								{ 
+									/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c1656a+0,d2979d+100 */
+									background: #c1656a; /* Old browsers */
+									background: -moz-linear-gradient(top,  #c1656a 0%, #d2979d 100%); /* FF3.6-15 */
+									background: -webkit-linear-gradient(top,  #c1656a 0%,#d2979d 100%); /* Chrome10-25,Safari5.1-6 */
+									background: linear-gradient(to bottom,  #c1656a 0%,#d2979d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+									filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c1656a', endColorstr='#d2979d',GradientType=0 ); /* IE6-9 */
+									}
+.red_bg_horizontal					{
+									/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ec4c4c+38,f0c0c0+100 */
+									background: #ec4c4c; /* Old browsers */
+									background: -moz-linear-gradient(left,  #ec4c4c 38%, #f0c0c0 100%); /* FF3.6-15 */
+									background: -webkit-linear-gradient(left,  #ec4c4c 38%,#f0c0c0 100%); /* Chrome10-25,Safari5.1-6 */
+									background: linear-gradient(to right,  #ec4c4c 38%,#f0c0c0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+									filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec4c4c', endColorstr='#f0c0c0',GradientType=1 ); /* IE6-9 */
+
+}
+
+.short_content 						{ padding-right: 150px; }
+.green_bg 							{ 
+									/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#08ab8c+38,b6e0d6+100 */
+									background: #08ab8c; /* Old browsers */
+									background: -moz-linear-gradient(top,  #08ab8c 38%, #b6e0d6 100%); /* FF3.6-15 */
+									background: -webkit-linear-gradient(top,  #08ab8c 38%,#b6e0d6 100%); /* Chrome10-25,Safari5.1-6 */
+									background: linear-gradient(to bottom,  #08ab8c 38%,#b6e0d6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+									filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#08ab8c', endColorstr='#b6e0d6',GradientType=0 ); /* IE6-9 */
+}
+.orange_bg 							{
+									/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f17b33+0,ffe2ae+100 */
+									background: #f17b33; /* Old browsers */
+									background: -moz-linear-gradient(top,  #f17b33 0%, #ffe2ae 100%); /* FF3.6-15 */
+									background: -webkit-linear-gradient(top,  #f17b33 0%,#ffe2ae 100%); /* Chrome10-25,Safari5.1-6 */
+									background: linear-gradient(to bottom,  #f17b33 0%,#ffe2ae 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+									filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f17b33', endColorstr='#ffe2ae',GradientType=0 ); /* IE6-9 */
+
+}
+.yellow_bg 							{
+									/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fabd26+0,f9c95a+100 */
+									background: #fabd26; /* Old browsers */
+									background: -moz-linear-gradient(top,  #fabd26 0%, #f9c95a 100%); /* FF3.6-15 */
+									background: -webkit-linear-gradient(top,  #fabd26 0%,#f9c95a 100%); /* Chrome10-25,Safari5.1-6 */
+									background: linear-gradient(to bottom,  #fabd26 0%,#f9c95a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+									filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fabd26', endColorstr='#f9c95a',GradientType=0 ); /* IE6-9 */
+
+}
+
+
+.yellow_bg_horizontal 				{ 
+									/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fcb815+38,f6dda4+100 */
+									background: #fcb815; /* Old browsers */
+									background: -moz-linear-gradient(left,  #fcb815 38%, #f6dda4 100%); /* FF3.6-15 */
+									background: -webkit-linear-gradient(left,  #fcb815 38%,#f6dda4 100%); /* Chrome10-25,Safari5.1-6 */
+									background: linear-gradient(to right,  #fcb815 38%,#f6dda4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+									filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcb815', endColorstr='#f6dda4',GradientType=1 ); /* IE6-9 */
+
+}
+
+.yellow_bg_lighter 					{
+									/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fcc233+1,fdd677+47 */
+									background: #fcc233; /* Old browsers */
+									background: -moz-linear-gradient(top,  #fcc233 1%, #fdd677 47%); /* FF3.6-15 */
+									background: -webkit-linear-gradient(top,  #fcc233 1%,#fdd677 47%); /* Chrome10-25,Safari5.1-6 */
+									background: linear-gradient(to bottom,  #fcc233 1%,#fdd677 47%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+									filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcc233', endColorstr='#fdd677',GradientType=0 ); /* IE6-9 */
+
+}
+
+.red_bg1 							{
+									/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ed4e4b+0,f58b8b+100 */
+									background: #ed4e4b; /* Old browsers */
+									background: -moz-linear-gradient(top,  #ed4e4b 0%, #f58b8b 100%); /* FF3.6-15 */
+									background: -webkit-linear-gradient(top,  #ed4e4b 0%,#f58b8b 100%); /* Chrome10-25,Safari5.1-6 */
+									background: linear-gradient(to bottom,  #ed4e4b 0%,#f58b8b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+									filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed4e4b', endColorstr='#f58b8b',GradientType=0 ); /* IE6-9 */
+
+}
+
+.blue_bg 							{
+									/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#01adef+1,37bff1+49,5ecbf4+100 */
+									background: #01adef; /* Old browsers */
+									background: -moz-linear-gradient(top,  #01adef 1%, #37bff1 49%, #5ecbf4 100%); /* FF3.6-15 */
+									background: -webkit-linear-gradient(top,  #01adef 1%,#37bff1 49%,#5ecbf4 100%); /* Chrome10-25,Safari5.1-6 */
+									background: linear-gradient(to bottom,  #01adef 1%,#37bff1 49%,#5ecbf4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+									filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01adef', endColorstr='#5ecbf4',GradientType=0 ); /* IE6-9 */
+}
+
+.bg_blue_horizontal 				{
+									/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2299dd+0,a6e3f6+100 */
+									background: #2299dd; /* Old browsers */
+									background: -moz-linear-gradient(left,  #2299dd 0%, #a6e3f6 100%); /* FF3.6-15 */
+									background: -webkit-linear-gradient(left,  #2299dd 0%,#a6e3f6 100%); /* Chrome10-25,Safari5.1-6 */
+									background: linear-gradient(to right,  #2299dd 0%,#a6e3f6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+									filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2299dd', endColorstr='#a6e3f6',GradientType=1 ); /* IE6-9 */
+
+}
+
+.green_blue_bg_horizontal {
+									/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#004c6e+23,009c87+83 */
+									background: #004c6e; /* Old browsers */
+									background: -moz-linear-gradient(left,  #004c6e 23%, #009c87 83%); /* FF3.6-15 */
+									background: -webkit-linear-gradient(left,  #004c6e 23%,#009c87 83%); /* Chrome10-25,Safari5.1-6 */
+									background: linear-gradient(to right,  #004c6e 23%,#009c87 83%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+									filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004c6e', endColorstr='#009c87',GradientType=1 ); /* IE6-9 */
+
+}
+.green_bg_horizontal 				{
+									/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#15ac8d+12,9fd7cc+100 */
+									background: #15ac8d; /* Old browsers */
+									background: -moz-linear-gradient(left,  #15ac8d 12%, #9fd7cc 100%); /* FF3.6-15 */
+									background: -webkit-linear-gradient(left,  #15ac8d 12%,#9fd7cc 100%); /* Chrome10-25,Safari5.1-6 */
+									background: linear-gradient(to right,  #15ac8d 12%,#9fd7cc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+									filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#15ac8d', endColorstr='#9fd7cc',GradientType=1 ); /* IE6-9 */
+}
+
+.pricing_table_bg 				{
+								/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#28a9e0+23,aad9ed+83 */
+								background: #28a9e0; /* Old browsers */
+								background: -moz-linear-gradient(top,  #28a9e0 23%, #aad9ed 83%); /* FF3.6-15 */
+								background: -webkit-linear-gradient(top,  #28a9e0 23%,#aad9ed 83%); /* Chrome10-25,Safari5.1-6 */
+								background: linear-gradient(to bottom,  #28a9e0 23%,#aad9ed 83%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+								filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#28a9e0', endColorstr='#aad9ed',GradientType=0 ); /* IE6-9 */
+}
+
+.new_dimention_bg 				{
+								/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3199cc+0,c65b63+57,204d6c+100 */
+								background: #3199cc; /* Old browsers */
+								background: -moz-linear-gradient(top,  #3199cc 0%, #c65b63 57%, #204d6c 100%); /* FF3.6-15 */
+								background: -webkit-linear-gradient(top,  #3199cc 0%,#c65b63 57%,#204d6c 100%); /* Chrome10-25,Safari5.1-6 */
+								background: linear-gradient(to bottom,  #3199cc 0%,#c65b63 57%,#204d6c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+								filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3199cc', endColorstr='#204d6c',GradientType=0 ); /* IE6-9 */
+
+}
+
+ 
+@-webkit-keyframes uil-flickr-anim1 {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 35px;
+  }
+  100% {
+    left: 0;
+  }
+}
+@-webkit-keyframes uil-flickr-anim1 {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 35px;
+  }
+  100% {
+    left: 0;
+  }
+}
+@-moz-keyframes uil-flickr-anim1 {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 35px;
+  }
+  100% {
+    left: 0;
+  }
+}
+@-ms-keyframes uil-flickr-anim1 {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 35px;
+  }
+  100% {
+    left: 0;
+  }
+}
+@-moz-keyframes uil-flickr-anim1 {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 35px;
+  }
+  100% {
+    left: 0;
+  }
+}
+@-webkit-keyframes uil-flickr-anim1 {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 35px;
+  }
+  100% {
+    left: 0;
+  }
+}
+@-o-keyframes uil-flickr-anim1 {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 35px;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes uil-flickr-anim1 {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 35px;
+  }
+  100% {
+    left: 0;
+  }
+}
+ 
+@-webkit-keyframes uil-flickr-anim2 {
+  0% {
+    left: 35px;
+    z-index: 1;
+  }
+  49% {
+    z-index: 1;
+  }
+  50% {
+    left: 0;
+    z-index: 10;
+  }
+  100% {
+    left: 35px;
+    z-index: 10;
+  }
+}
+@-webkit-keyframes uil-flickr-anim2 {
+  0% {
+    left: 35px;
+    z-index: 1;
+  }
+  49% {
+    z-index: 1;
+  }
+  50% {
+    left: 0;
+    z-index: 10;
+  }
+  100% {
+    left: 35px;
+    z-index: 10;
+  }
+}
+@-moz-keyframes uil-flickr-anim2 {
+  0% {
+    left: 35px;
+    z-index: 1;
+  }
+  49% {
+    z-index: 1;
+  }
+  50% {
+    left: 0;
+    z-index: 10;
+  }
+  100% {
+    left: 35px;
+    z-index: 10;
+  }
+}
+@-ms-keyframes uil-flickr-anim2 {
+  0% {
+    left: 35px;
+    z-index: 1;
+  }
+  49% {
+    z-index: 1;
+  }
+  50% {
+    left: 0;
+    z-index: 10;
+  }
+  100% {
+    left: 35px;
+    z-index: 10;
+  }
+}
+@-moz-keyframes uil-flickr-anim2 {
+  0% {
+    left: 35px;
+    z-index: 1;
+  }
+  49% {
+    z-index: 1;
+  }
+  50% {
+    left: 0;
+    z-index: 10;
+  }
+  100% {
+    left: 35px;
+    z-index: 10;
+  }
+}
+@-webkit-keyframes uil-flickr-anim2 {
+  0% {
+    left: 35px;
+    z-index: 1;
+  }
+  49% {
+    z-index: 1;
+  }
+  50% {
+    left: 0;
+    z-index: 10;
+  }
+  100% {
+    left: 35px;
+    z-index: 10;
+  }
+}
+@-o-keyframes uil-flickr-anim2 {
+  0% {
+    left: 35px;
+    z-index: 1;
+  }
+  49% {
+    z-index: 1;
+  }
+  50% {
+    left: 0;
+    z-index: 10;
+  }
+  100% {
+    left: 35px;
+    z-index: 10;
+  }
+}
+@keyframes uil-flickr-anim2 {
+  0% {
+    left: 35px;
+    z-index: 1;
+  }
+  49% {
+    z-index: 1;
+  }
+  50% {
+    left: 0;
+    z-index: 10;
+  }
+  100% {
+    left: 35px;
+    z-index: 10;
+  }
+}
+.uil-flickr-css {
+  background: none;
+  position: relative;
+  width: 70px;
+  height: 70px;
+  display: block;
+  margin: auto; 
+}
+.uil-flickr-css > div {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  position: absolute;
+  top: 40px;
+}
+.uil-flickr-css > div:nth-of-type(1) {
+  left: 0;
+  background: #00aeed;
+  z-index: 5;
+  -ms-animation: uil-flickr-anim1 1.5s linear infinite;
+  -moz-animation: uil-flickr-anim1 1.5s linear infinite;
+  -webkit-animation: uil-flickr-anim1 1.5s linear infinite;
+  -o-animation: uil-flickr-anim1 1.5s linear infinite;
+  animation: uil-flickr-anim1 1.5s linear infinite;
+}
+.uil-flickr-css > div:nth-of-type(2) {
+  left: 100px;
+  background: #00a482;
+  -ms-animation: uil-flickr-anim2 1.5s linear infinite;
+  -moz-animation: uil-flickr-anim2 1.5s linear infinite;
+  -webkit-animation: uil-flickr-anim2 1.5s linear infinite;
+  -o-animation: uil-flickr-anim2 1.5s linear infinite;
+  animation: uil-flickr-anim2 1.5s linear infinite;
+}
+ 

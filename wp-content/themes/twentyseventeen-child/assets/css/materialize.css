@@ -1,0 +1,64 @@
+/*
+Error: ("lighten-5": #FFEBEE, "lighten-4": #FFCDD2, "lighten-3": #EF9A9A, "lighten-2": #E57373, "lighten-1": #EF5350, "base": #F44336, "darken-1": #E53935, "darken-2": #D32F2F, "darken-3": #C62828, "darken-4": #B71C1C, "accent-1": #FF8A80, "accent-2": #FF5252, "accent-3": #FF1744, "accent-4": #D50000) isn't a valid CSS value.
+        on line 3098 of C:\xampp\htdocs\website\sass\materialize.scss
+
+3093:   font-size: 12px;
+3094:   line-height: 1.5;
+3095: }
+3096: 
+3097: .btn-material-red {
+3098:   background-color: ("lighten-5": #FFEBEE, "lighten-4": #FFCDD2, "lighten-3": #EF9A9A, "lighten-2": #E57373, "lighten-1": #EF5350, "base": #F44336, "darken-1": #E53935, "darken-2": #D32F2F, "darken-3": #C62828, "darken-4": #B71C1C, "accent-1": #FF8A80, "accent-2": #FF5252, "accent-3": #FF1744, "accent-4": #D50000);
+3099: }
+3100: 
+3101: .btn-material-pink {
+3102:   background-color: ("lighten-5": #fce4ec, "lighten-4": #f8bbd0, "lighten-3": #f48fb1, "lighten-2": #f06292, "lighten-1": #ec407a, "base": #e91e63, "darken-1": #d81b60, "darken-2": #c2185b, "darken-3": #ad1457, "darken-4": #880e4f, "accent-1": #ff80ab, "accent-2": #ff4081, "accent-3": #f50057, "accent-4": #c51162);
+3103: }
+
+Backtrace:
+C:\xampp\htdocs\website\sass\materialize.scss:3098
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/script/value/map.rb:52:in `to_s'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:385:in `visit_prop'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:79:in `block in with_base'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:115:in `with_frame'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:79:in `with_base'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:420:in `block (2 levels) in visit_rule'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:420:in `map'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:420:in `block in visit_rule'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:418:in `visit_rule'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:79:in `block in with_base'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:115:in `with_frame'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:79:in `with_base'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:157:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:8:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:285:in `render_with_sourcemap'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:396:in `run'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:62:in `process_result'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:52:in `parse'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:19:in `parse!'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/bin/sass:13:in `<top (required)>'
+C:/Program Files (x86)/Koala/bin/sass:18:in `load'
+C:/Program Files (x86)/Koala/bin/sass:18:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: (\"lighten-5\": #FFEBEE, \"lighten-4\": #FFCDD2, \"lighten-3\": #EF9A9A, \"lighten-2\": #E57373, \"lighten-1\": #EF5350, \"base\": #F44336, \"darken-1\": #E53935, \"darken-2\": #D32F2F, \"darken-3\": #C62828, \"darken-4\": #B71C1C, \"accent-1\": #FF8A80, \"accent-2\": #FF5252, \"accent-3\": #FF1744, \"accent-4\": #D50000) isn't a valid CSS value.\A         on line 3098 of C:\xampp\htdocs\website\sass\materialize.scss\A \A 3093:   font-size: 12px;\A 3094:   line-height: 1.5;\A 3095: }\A 3096: \A 3097: .btn-material-red {\A 3098:   background-color: (\"lighten-5\": #FFEBEE, \"lighten-4\": #FFCDD2, \"lighten-3\": #EF9A9A, \"lighten-2\": #E57373, \"lighten-1\": #EF5350, \"base\": #F44336, \"darken-1\": #E53935, \"darken-2\": #D32F2F, \"darken-3\": #C62828, \"darken-4\": #B71C1C, \"accent-1\": #FF8A80, \"accent-2\": #FF5252, \"accent-3\": #FF1744, \"accent-4\": #D50000);\A 3099: }\A 3100: \A 3101: .btn-material-pink {\A 3102:   background-color: (\"lighten-5\": #fce4ec, \"lighten-4\": #f8bbd0, \"lighten-3\": #f48fb1, \"lighten-2\": #f06292, \"lighten-1\": #ec407a, \"base\": #e91e63, \"darken-1\": #d81b60, \"darken-2\": #c2185b, \"darken-3\": #ad1457, \"darken-4\": #880e4f, \"accent-1\": #ff80ab, \"accent-2\": #ff4081, \"accent-3\": #f50057, \"accent-4\": #c51162);\A 3103: }"; }

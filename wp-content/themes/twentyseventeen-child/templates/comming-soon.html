@@ -1,0 +1,127 @@
+
+
+<link rel="stylesheet" href="css/flipclock.css">
+
+<link rel="stylesheet" href="css/responsive_login.css">
+
+<link rel="stylesheet" href="css/stylesheet_login.css">
+
+
+
+<div class="container-fluid sign_up coming" id=""> 
+
+	<div class="container padding0 sign_up_inner">
+
+		<div class="clock_wrapper"> 
+
+			<div class="clock_wrapper_span">
+
+				<h2>Tutor Wizard launching soon. Stay tuned</h2>
+<!--
+
+				<div class="clock hidden-xs"></div> 
+
+
+
+                <div class="sign_up_email col-md-12">
+
+                    <h3>Sign Up For Registration Alert</h3>
+
+                    <div class="col-md-6 col-md-offset-3">
+
+                        <form class="form" action="#"> 
+
+                           
+
+                            <input type="email" class="form-control" id="inlineFormInputGroup" placeholder="Your Email">
+
+                            <button type="button" class="btn btn-primary sign_up ">Submit</button>
+
+
+
+                        </form>
+
+                    </div>
+
+-->                    
+
+                </div> 
+
+			</div>
+
+           
+
+
+
+		</div> 
+
+	</div>
+
+</div>
+
+
+
+<script src="js/flipclock.js"></script>
+
+<script type="text/javascript">
+
+    var clock;
+
+    
+
+    $(document).ready(function() {
+ 
+
+      	var date  = new Date(2017, 6, 24, 0, 0, 0);
+
+		var now   = new Date();
+
+		var diff  = date.getTime()/1000 - now.getTime()/1000;
+
+
+
+	    var clock = $('.clock').FlipClock(diff,{
+
+	        clockFace: 'DailyCounter',
+	        countdown: true,
+
+	    }); 
+
+
+
+        // clock = $('.clock').FlipClock(diff,{
+
+        //     clockFace: 'DailyCounter',
+
+        //     autoStart: false,
+
+        //     callbacks: {
+
+        //         stop: function() {
+
+        //             $('.message').html('The clock has stopped!')
+
+        //         }
+
+        //     }
+
+        // });
+
+                
+
+        //clock.setTime(220880);
+
+        //clock.setCountdown(true);
+
+        //clock.start();
+
+
+
+    });
+
+</script>
+
+<script>
+  
+ 
+</script>
